@@ -12,10 +12,13 @@
 #include <stdio.h>
 
 /**
- * 
- *
- *
- *
+ * Crée un processus qui imprime "Processus 1"
+ * crée un proc. qui attend 10 secondes
+ * crée un proc. qui imprime "Processus 3"
+ * crée un proc. qui attend 5 secondes
+ * crée un proc. qui imprime "processus 5"
+ * Imprime ensuite Terminé
+ * Tout est bloquant. 
  * @return     0 
  */
 int main() {

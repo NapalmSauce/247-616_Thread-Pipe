@@ -21,9 +21,11 @@ const char* processusPereOuFils;
 /// @param  aucun
 void codeDuProcessusParent(void)
 {
+    int ret;
     processusPereOuFils = "Processus Père";
     sleep(1);
     printf("Je suis %s\n", processusPereOuFils);
+    wait(&ret);
 }
 
 /// @brief Code exécuté par le processus Fils
@@ -42,11 +44,15 @@ int main()
     pid_t pid;
     pid = fork();
 
-    // Appel fonction Enfant
-
-
-    // Appel fonction Parent
-
-    
+    if(pid == 0)
+    {
+      // Appel fonction Enfant
+      codeDuProcessusEnfant();
+    }
+    else
+    {
+      // Appel fonction Parent
+      codeDuProcessusParent();
+    }
     return 0;
 }
